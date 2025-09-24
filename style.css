@@ -1,0 +1,227 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    text-align: center;
+    max-width: 600px;
+    width: 100%;
+}
+
+h1 {
+    color: #fff;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.input-section {
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.input-group label {
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.input-group input {
+    width: 60px;
+    height: 45px;
+    border-radius: 10px;
+    border: none;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    outline: none;
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    transform: scale(1.05);
+}
+
+.controls {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.start-btn {
+    background: linear-gradient(45deg, #4CAF50, #45a049);
+    color: #fff;
+    box-shadow: 0 4px 15px 0 rgba(76, 175, 80, 0.3);
+}
+
+
+.start-btn:hover {
+    box-shadow: 0 6px 20px 0 rgba(76, 175, 80, 0.5);
+    transform: translateY(-2px);
+}
+
+.pause-btn {
+    background: linear-gradient(45deg, #ff9800, #f57c00);
+    color: #fff;
+    box-shadow: 0 4px 15px 0 rgba(255, 152, 0, 0.3);
+}
+.pause-btn:hover {
+    box-shadow: 0 6px 20px 0 rgba(255, 152, 0, 0.4);
+    transform: translateY(-2px);
+}
+
+.reset-btn {
+    background: linear-gradient(45deg, #f44336, #d32f2f);
+    color: #fff;
+    box-shadow: 0 4px 15px 0 rgba(244, 67, 54, 0.3);
+}
+
+.reset-btn:hover {
+    box-shadow: 0 6px 20px 0 rgba(244, 67, 54, 0.4);
+    transform: translateY(-2px);
+}
+
+.display{
+    margin-bottom: 20px;
+    border-radius: 15px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.time-display {
+    font-size: 3rem;
+    color: #fff;
+    font-weight: bold;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.labels {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+}
+
+.label {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.status {
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 20px;
+    min-height: 30px;
+}
+
+.finished {
+    animation: pulse 1s infinite
+}
+
+@keyframes pulse{
+    0%{ opacity: 1; }
+    50%{ opacity: 0.7; }
+    100%{ opacity: 1; }
+}   
+
+.quick-set {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.quick-btn {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    border-radius: 15px;
+}
+
+.quick-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        margin: 10px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .time-display {
+        font-size: 2.5rem;
+    }
+    .input-section {
+        gap: 10px;
+        flex-direction: column;
+    }
+
+    .controls {
+        flex-direction: column;
+        align-items: center;
+    }
+    button {
+        width: 100%;
+        max-width: 200px;
+    }
+}
