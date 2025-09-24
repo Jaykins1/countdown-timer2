@@ -23,7 +23,7 @@ function setupEventListeners() {
                 updateDisplay();
             }
         });
-    }); // Fixed: Added missing closing bracket
+    }); 
     document.addEventListener('visibilitychange', handleVisibilityChange);
 }
 
@@ -61,7 +61,7 @@ function startTimer() {
                 showStatus("Please set a time first!", "#ff6b6b", 2000);
                 return;
             }
-        } // Fixed: Added missing closing bracket
+        } 
 
         isRunning = true;
         showStatus("Timer running...", "#4CAF50");
@@ -90,7 +90,7 @@ function resetTimer() {
     timeLeft = originalTime;
     updateDisplay();
     updateInputs();
-    showStatus("Timer reset", "white", 2000); // Changed color to match CSS
+    showStatus("Timer reset", "white", 2000); 
     status.classList.remove("finished");
 }
 
@@ -113,7 +113,7 @@ function showStatus(message, color, duration = 0) {
     if (duration > 0) {
         setTimeout(() => {
             status.textContent = "Ready to start";
-            status.style.color = "white"; // Changed to match CSS
+            status.style.color = "white"; 
         }, duration);
     }
 }
@@ -131,7 +131,7 @@ function handleVisibilityChange() {
         window.lastVisibilityTime = Date.now();
     } else if (!document.hidden && isRunning && window.lastVisibilityTime) {
         const elapsed = Math.floor((Date.now() - window.lastVisibilityTime) / 1000);
-        timeLeft = Math.max(0, timeLeft - elapsed); // Fixed: Added space
+        timeLeft = Math.max(0, timeLeft - elapsed); 
         updateDisplay();
 
         if (timeLeft <= 0) {
@@ -140,14 +140,14 @@ function handleVisibilityChange() {
     }
 } 
 
-// Fixed: Function name capitalization and logic
+
 function quickSet(minutes, hours = 0, seconds = 0){
-    if (!isRunning) { // Fixed: Changed from isRunning to !isRunning
+    if (!isRunning) { 
         hoursInput.value = hours;
         minutesInput.value = minutes;
         secondsInput.value = seconds;
         calculateTimeLeft();
         updateDisplay();
-        showStatus(`Set to ${hours}h ${minutes}m ${seconds}s`, "white"); // Fixed: Used backticks for template literal
+        showStatus(`Set to ${hours}h ${minutes}m ${seconds}s`, "white"); 
     }
 }
